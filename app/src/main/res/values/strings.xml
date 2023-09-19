@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">commerce</string>
+    <string name="RightAdress">The Right Adress\nFor Shopping\nAnyDay</string>
+    <string name="qulity">It is now very easy to reach the\nbest quality among the\nproducts on the internet!</string>
+    <string name="kleine">Kleine.</string>
+    <string name="FirstName">First Name</string>
+    <string name="LastName">Last Name</string>
+    <string name="Register">REGISTER</string>
+    <string name="registerDetails"> Do you have an account? log in</string>
+    <string name="letsRegister">Let\'s Register</string>
+</resources>
