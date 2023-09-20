@@ -8,4 +8,10 @@
     <string name="Register">REGISTER</string>
     <string name="registerDetails"> Do you have an account? log in</string>
     <string name="letsRegister">Let\'s Register</string>
+    <string name="cancel">cancel</string>
+    <string name="send">send</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="we_will_send_you_the_password_reset_link_to_your_email">We will send you the password reset link to your email</string>
+    <string name="best_deals">Best deals</string>
+    <string name="best_products">Best Products</string>
 </resources>

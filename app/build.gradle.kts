@@ -62,7 +62,7 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     // Navigation component
-    val nav_version = "2.7.1"
+    val nav_version = "2.7.2"
     //noinspection GradleDependency
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     //noinspection GradleDependency
