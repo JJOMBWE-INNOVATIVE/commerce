@@ -14,4 +14,7 @@
     <string name="we_will_send_you_the_password_reset_link_to_your_email">We will send you the password reset link to your email</string>
     <string name="best_deals">Best deals</string>
     <string name="best_products">Best Products</string>
+    <string name="scotch_premium">Scotch Premium</string>
+    <string name="_1600">$1600</string>
+    <string name="add_to_cart">Add to cart</string>
 </resources>
