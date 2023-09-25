@@ -33,12 +33,12 @@ open class BaseCategoryFragment: Fragment(R.layout.fragment_base_category) {
 
         setupOfferRv()
         setupBestProductsRv()
-
+//
 //        bestProductsAdapter.onClick = {
 //            val b = Bundle().apply { putParcelable("product",it) }
 //            findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
 //        }
-//
+
 //        offerAdapter.onClick = {
 //            val b = Bundle().apply { putParcelable("product",it) }
 //            findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)

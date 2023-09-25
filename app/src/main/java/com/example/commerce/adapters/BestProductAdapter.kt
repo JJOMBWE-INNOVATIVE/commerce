@@ -20,7 +20,7 @@ class BestProductsAdapter : RecyclerView.Adapter<BestProductsAdapter.BestProduct
             binding.apply {
                 val priceAfterOffer = product.offerPercentage.getProductPrice(product.price)
                 tvNewPrice.text = "$ ${String.format("%.2f", priceAfterOffer)}"
-                tvPrice.paintFlags = tvPrice.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+               // tvPrice.paintFlags = tvPrice.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
                 if (product.offerPercentage == null)
                     tvNewPrice.visibility = View.INVISIBLE
 
