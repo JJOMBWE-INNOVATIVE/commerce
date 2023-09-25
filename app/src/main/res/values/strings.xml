@@ -17,4 +17,25 @@
     <string name="scotch_premium">Scotch Premium</string>
     <string name="_1600">$1600</string>
     <string name="add_to_cart">Add to cart</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lofcoding">Lofcoding</string>
+    <string name="s">S</string>
+    <string name="total">Total</string>
+    <string name="_150">$150</string>
+    <string name="my_cart">My Cart</string>
+    <string name="address_location_ex_home">Address location Ex: Home</string>
+    <string name="full_name">Full Name</string>
+    <string name="street">Street</string>
+    <string name="city">City</string>
+    <string name="state">State</string>
+    <string name="phone">Phone</string>
+    <string name="delete">Delete</string>
+    <string name="save">Save</string>
+    <string name="addresses">Addresses</string>
+    <string name="my_account">My account</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="forgot_change_password">Forgot/Change password</string>
 </resources>

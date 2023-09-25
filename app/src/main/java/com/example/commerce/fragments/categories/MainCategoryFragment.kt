@@ -20,6 +20,7 @@ import com.example.commerce.adapters.BestProductsAdapter
 import com.example.commerce.adapters.SpecialProductsAdapter
 import com.example.commerce.databinding.FragmentMainCategoryBinding
 import com.example.commerce.util.Resource
+import com.example.commerce.util.showBottomNavigationView
 import com.example.commerce.viewModel.MainCategoryViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
@@ -46,6 +47,21 @@ class MainCategoryFragment : Fragment(R.layout.fragment_main_category) {
         setupSpecialProductsRv()
         setupBestDealsRv()
         setupBestProducts()
+
+        specialProductsAdapter.onClick = {
+            val b = Bundle().apply { putParcelable("Products",it) }
+            findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
+        }
+
+        bestDealsAdapter.onClick = {
+            val b = Bundle().apply { putParcelable("Products",it) }
+            findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
+        }
+
+        bestProductsAdapter.onClick = {
+            val b = Bundle().apply { putParcelable("Products",it) }
+            findNavController().navigate(R.id.action_homeFragment_to_productDetailsFragment,b)
+        }
 
         lifecycleScope.launchWhenStarted {
             viewModel.specialProducts.collectLatest {
@@ -158,4 +174,10 @@ class MainCategoryFragment : Fragment(R.layout.fragment_main_category) {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        showBottomNavigationView()
+    }
 }
+

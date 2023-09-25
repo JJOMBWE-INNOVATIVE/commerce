@@ -2,21 +2,14 @@ package com.example.commerce.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.commerce.databinding.ActivityShoppingBinding
-import com.example.commerce.databinding.ActivityLoginRegisterBinding
+import com.example.commerce.R
 import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.HiltAndroidApp
 
 @AndroidEntryPoint
-class RegisterLoginActivity : AppCompatActivity() {
+class LoginRegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = ActivityLoginRegisterBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-
-
-
-
-
+        setContentView(R.layout.activity_login_register)
     }
 }
