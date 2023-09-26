@@ -72,6 +72,10 @@ class UserAccountFragment : Fragment() {
             }
         }
 
+        binding.imageCloseUserAccount.setOnClickListener {
+            findNavController().navigateUp()
+        }
+
         lifecycleScope.launchWhenStarted {
             viewModel.updateInfo.collectLatest {
                 when (it) {

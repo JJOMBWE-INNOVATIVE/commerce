@@ -56,6 +56,7 @@ class ProfileFragment : Fragment() {
             val action = ProfileFragmentDirections.actionProfileFragment3ToBillingFragment(
                 0f,
                 emptyArray(),
+                false
             )
             findNavController().navigate(action)
         }
