@@ -16,7 +16,7 @@ android {
     compileSdk = 34
     defaultConfig {
         applicationId = "com.example.commerce"
-        minSdk = 26
+        minSdk = 24
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -86,7 +86,7 @@ dependencies {
     implementation("com.shuhart.stepview:stepview:1.5.1")
 
     // Android Ktx
-    implementation("androidx.navigation:navigation-fragment-ktx:2.7.2")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.3")
 
     // Dagger Hilt
 //    implementation("com.google.dagger:hilt-android:2.48")

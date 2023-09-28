@@ -38,4 +38,8 @@
     <string name="last_name">Last Name</string>
     <string name="email">Email</string>
     <string name="forgot_change_password">Forgot/Change password</string>
+    <string name="search">Search</string>
+    <string name="cart">Cart</string>
+    <string name="profile">Profile</string>
+    <string name="home">Home</string>
 </resources>

@@ -15,7 +15,7 @@
             app:destination="@id/ProductDetailsFragment" />
         <action
             android:id="@+id/action_homeFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
+            app:destination="@id/profileFragment3" />
 
     </fragment>
     <fragment
