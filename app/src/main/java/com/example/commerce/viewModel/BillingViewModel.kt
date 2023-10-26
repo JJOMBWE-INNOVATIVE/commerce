@@ -1,8 +1,8 @@
 package com.example.commerce.viewModel
+import androidx.compose.ui.semantics.Role
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.commerce.data.Address
-import com.example.commerce.data.order.Order
 import com.example.commerce.util.Resource
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -34,7 +34,7 @@ class BillingViewModel @Inject constructor(
                     return@addSnapshotListener
                 }
                 val addresses = value?.toObjects(Address::class.java)
-                viewModelScope.launch { _address.emit(Resource.Success(addresses!!)) }
+                viewModelScope.launch { _address.emit(Resource.Success(addresses!!,com.example.commerce.util.Role.ADMIN)) }
             }
     }
 

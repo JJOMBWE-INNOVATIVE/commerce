@@ -1,8 +1,8 @@
 package com.example.commerce.viewModel
+import androidx.compose.ui.semantics.Role
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.commerce.data.Address
-import com.example.commerce.util.Constants.USER_COLLECTION
 import com.example.commerce.util.Resource
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -34,7 +34,10 @@ class AddressViewModel @Inject constructor(
             viewModelScope.launch { _addNewAddress.emit(Resource.Loading()) }
             firestore.collection("user").document(auth.uid!!).collection("address").document()
                 .set(address).addOnSuccessListener {
-                    viewModelScope.launch { _addNewAddress.emit(Resource.Success(address)) }
+                    viewModelScope.launch { _addNewAddress.emit(Resource.Success(
+                        address,
+                        com.example.commerce.util.Role.ADMIN
+                    )) }
                 }.addOnFailureListener {
                     viewModelScope.launch { _addNewAddress.emit(Resource.Error(it.message.toString())) }
                 }

@@ -42,4 +42,15 @@
     <string name="cart">Cart</string>
     <string name="profile">Profile</string>
     <string name="home">Home</string>
+    <string name="product_general_information">Product_general_information</string>
+    <string name="product_name">Product name</string>
+    <string name="product_category">Product category</string>
+    <string name="product_description_optional">product_description - optional</string>
+    <string name="product_price">Product Price</string>
+    <string name="offer_percentage_optional">offer_percentage - optional</string>
+    <string name="product_details">Product_details</string>
+    <string name="sizes_optional_use_between_each_new_size">sizes - optional\n</string>
+    <string name="product_images">Product images</string>
+    <string name="product_colors">Product colors</string>
+    <string name="search_any_product">Search any product.....</string>
 </resources>

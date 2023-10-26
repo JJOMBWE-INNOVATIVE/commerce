@@ -1,4 +1,5 @@
 package com.example.commerce.viewModel
+import androidx.compose.ui.semantics.Role
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.commerce.data.CartProduct
@@ -70,7 +71,10 @@ class CartViewModel @Inject constructor(
                 } else {
                     cartProductDocuments = value.documents
                     val cartProducts = value.toObjects(CartProduct::class.java)
-                    viewModelScope.launch { _cartProducts.emit(Resource.Success(cartProducts)) }
+                    viewModelScope.launch { _cartProducts.emit(Resource.Success(
+                        cartProducts,
+                        com.example.commerce.util.Role.ADMIN
+                    )) }
                 }
             }
     }

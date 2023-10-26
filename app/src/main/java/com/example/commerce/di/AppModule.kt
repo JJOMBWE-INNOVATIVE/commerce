@@ -5,6 +5,7 @@ import android.content.Context
 import com.example.commerce.firebase.FirebaseCommon
 import com.example.commerce.util.Constants.INTRODUCTION_SP
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -43,4 +44,10 @@ object AppModule {
     @Singleton
     fun provideStorage() = FirebaseStorage.getInstance().reference
 
+    @Provides
+    @Singleton
+    fun provideDataBase(): FirebaseDatabase {
+        return FirebaseDatabase.getInstance()
+
+}
 }

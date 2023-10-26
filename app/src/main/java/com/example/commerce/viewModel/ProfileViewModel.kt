@@ -1,5 +1,6 @@
 package com.example.commerce.viewModel
 
+import androidx.compose.ui.semantics.Role
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.commerce.data.User
@@ -39,7 +40,7 @@ class ProfileViewModel @Inject constructor(
                     val user = value?.toObject(User::class.java)
                     user?.let {
                         viewModelScope.launch {
-                            _user.emit(Resource.Success(user))
+                            _user.emit(Resource.Success(user,com.example.commerce.util.Role.ADMIN))
                         }
                     }
                 }

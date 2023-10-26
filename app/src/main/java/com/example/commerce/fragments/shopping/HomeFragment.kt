@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.commerce.R
 import com.example.commerce.adapters.HomeViewpagerAdapter
 import com.example.commerce.databinding.FragmentHomeBinding
@@ -56,8 +57,13 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 5 -> tab.text = "Furniture"
             }
         }.attach()
-    }
 
+        binding.searchBar.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_searchFragment)
+        }
+
+
+    }
 }
 
 

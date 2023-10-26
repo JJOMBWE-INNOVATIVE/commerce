@@ -33,6 +33,12 @@
             app:popEnterAnim="@anim/from_left"
             app:popExitAnim="@anim/to_right"
             app:popUpTo="@id/accountOptionsFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_productAdderFragment"
+            app:destination="@id/productAdderFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_shoppingActivity"
+            app:destination="@id/shoppingActivity" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -70,5 +76,15 @@
             app:popEnterAnim="@anim/from_left"
             app:popExitAnim="@anim/to_right"/>
     </fragment>
+    <fragment
+        android:id="@+id/productAdderFragment"
+        android:name="com.example.commerce.fragments.productAdder.ProductAdderFragment"
+        android:label="ProductAdderFragment"
+        tools:layout="@layout/fragment_product_adder"/>
+    <activity
+        android:id="@+id/shoppingActivity"
+        android:name="com.example.commerce.activities.ShoppingActivity"
+        android:label="activity_shopping"
+        tools:layout="@layout/activity_shopping" />
 
 </navigation>

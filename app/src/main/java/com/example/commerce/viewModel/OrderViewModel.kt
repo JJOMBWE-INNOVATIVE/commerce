@@ -1,5 +1,6 @@
 package com.example.commerce.viewModel
 
+import androidx.compose.ui.semantics.Role
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.commerce.data.order.Order
@@ -47,7 +48,7 @@ class OrderViewModel @Inject constructor(
                 }
         }.addOnSuccessListener {
             viewModelScope.launch {
-                _order.emit(Resource.Success(order))
+                _order.emit(Resource.Success(order, com.example.commerce.util.Role.ADMIN))
             }
         }.addOnFailureListener {
             viewModelScope.launch {

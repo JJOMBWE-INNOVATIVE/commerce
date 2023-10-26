@@ -1,5 +1,6 @@
 package com.example.commerce.viewModel
 
+import androidx.compose.ui.semantics.Role
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.commerce.data.Category
@@ -35,7 +36,7 @@ class CategoryViewModel constructor(
             .addOnSuccessListener {
                 val products = it.toObjects(Products::class.java)
                 viewModelScope.launch {
-                    _offerProducts.emit(Resource.Success(products))
+                    _offerProducts.emit(Resource.Success(products,com.example.commerce.util.Role.ADMIN))
                 }
             }.addOnFailureListener {
                 viewModelScope.launch {
@@ -53,7 +54,7 @@ class CategoryViewModel constructor(
             .addOnSuccessListener {
                 val products = it.toObjects(Products::class.java)
                 viewModelScope.launch {
-                    _bestProducts.emit(Resource.Success(products))
+                    _bestProducts.emit(Resource.Success(products,com.example.commerce.util.Role.ADMIN))
                 }
             }.addOnFailureListener {
                 viewModelScope.launch {

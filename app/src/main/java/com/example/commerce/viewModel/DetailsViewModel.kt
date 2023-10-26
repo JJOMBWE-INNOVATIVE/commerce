@@ -1,5 +1,6 @@
 package com.example.commerce.viewModel
 
+import androidx.compose.ui.semantics.Role
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.commerce.data.CartProduct
@@ -50,7 +51,7 @@ class DetailsViewModel @Inject constructor(
         firebaseCommon.addProductToCart(cartProduct) { addedProduct, e ->
             viewModelScope.launch {
                 if (e == null)
-                    _addToCart.emit(Resource.Success(addedProduct!!))
+                    _addToCart.emit(Resource.Success(addedProduct!!,com.example.commerce.util.Role.ADMIN))
                 else
                     _addToCart.emit(Resource.Error(e.message.toString()))
             }
@@ -61,7 +62,7 @@ class DetailsViewModel @Inject constructor(
         firebaseCommon.increaseQuantity(documentId) { _, e ->
             viewModelScope.launch {
                 if (e == null)
-                    _addToCart.emit(Resource.Success(cartProduct))
+                    _addToCart.emit(Resource.Success(cartProduct,com.example.commerce.util.Role.ADMIN))
                 else
                     _addToCart.emit(Resource.Error(e.message.toString()))
             }

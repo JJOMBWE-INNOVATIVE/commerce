@@ -1,11 +1,11 @@
 package com.example.commerce.viewModel
 
+import androidx.compose.ui.semantics.Role
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.commerce.data.Products
 import com.example.commerce.util.Resource
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.Query
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -43,7 +43,7 @@ class MainCategoryViewModel @Inject constructor(
             .whereEqualTo("category", "Special product").get().addOnSuccessListener { result ->
                 val specialProductsList = result.toObjects(Products::class.java)
                 viewModelScope.launch {
-                    _specialProducts.emit(Resource.Success(specialProductsList))
+                    _specialProducts.emit(Resource.Success(specialProductsList,com.example.commerce.util.Role.ADMIN))
                 }
             }.addOnFailureListener {
                 viewModelScope.launch {
@@ -61,7 +61,7 @@ class MainCategoryViewModel @Inject constructor(
             .addOnSuccessListener { result ->
                 val bestDealsProducts = result.toObjects(Products::class.java)
                 viewModelScope.launch {
-                    _bestDealsProducts.emit(Resource.Success(bestDealsProducts))
+                    _bestDealsProducts.emit(Resource.Success(bestDealsProducts,com.example.commerce.util.Role.ADMIN))
                 }
             }.addOnFailureListener {
                 viewModelScope.launch {
@@ -83,7 +83,7 @@ class MainCategoryViewModel @Inject constructor(
                         pagingInfo.isPagingEnd = bestProducts == pagingInfo.oldBestProducts
                         pagingInfo.oldBestProducts = bestProducts
                         viewModelScope.launch {
-                            _bestProducts.emit(Resource.Success(bestProducts))
+                            _bestProducts.emit(Resource.Success(bestProducts,com.example.commerce.util.Role.ADMIN))
                         }
                         pagingInfo.bestProductsPage++
                     }.addOnFailureListener {

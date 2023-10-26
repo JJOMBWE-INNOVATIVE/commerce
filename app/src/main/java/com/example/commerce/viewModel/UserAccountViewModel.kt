@@ -3,7 +3,7 @@ import android.app.Application
 import android.graphics.Bitmap
 import android.net.Uri
 import android.provider.MediaStore
-import android.util.Log
+import androidx.compose.ui.semantics.Role
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.commerce.CommerceApplication
@@ -51,7 +51,7 @@ class UserAccountViewModel @Inject constructor(
                 val user = it.toObject(User::class.java)
                 user?.let {
                     viewModelScope.launch {
-                        _user.emit(Resource.Success(it))
+                        _user.emit(Resource.Success(it,com.example.commerce.util.Role.ADMIN))
                     }
                 }
             }.addOnFailureListener {
@@ -120,7 +120,7 @@ class UserAccountViewModel @Inject constructor(
             }
         }.addOnSuccessListener {
             viewModelScope.launch {
-                _updateInfo.emit(Resource.Success(user))
+                _updateInfo.emit(Resource.Success(user,com.example.commerce.util.Role.ADMIN))
             }
         }.addOnFailureListener {
             viewModelScope.launch {
