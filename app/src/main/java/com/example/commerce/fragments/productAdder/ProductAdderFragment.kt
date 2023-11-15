@@ -15,7 +15,10 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.example.commerce.R
+import com.example.commerce.activities.LoginRegisterActivity
+import com.example.commerce.activities.ShoppingActivity
 import com.example.commerce.data.order.products
 import com.example.commerce.databinding.FragmentProductAdderBinding
 import com.google.firebase.FirebaseApp
@@ -111,10 +114,25 @@ class ProductAdderFragment : Fragment() {
                 return@setOnClickListener
             }
             saveProduct()
+            notifications()
+        }
+
+        binding.closeAdmin.setOnClickListener {
+            var intent = Intent(requireContext(), LoginRegisterActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.userView.setOnClickListener {
+            var intent = Intent(requireContext(), ShoppingActivity::class.java)
+            startActivity(intent)
         }
 
 
 
+    }
+
+    private fun notifications() {
+        TODO("Not yet implemented")
     }
 
     private fun updateColors() {

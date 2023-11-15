@@ -18,5 +18,12 @@
     <color name="g_green">#11FF00</color>
     <color name="g_gray500">#969899</color>
     <color name="g_orange_yellow">#F8BA00</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="primary">#f52c56</color>
+    <color name="accent">#f52c56</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="g_grey">#E5E5E5</color>
+    <color name="g_loading">#fffafc</color>
 
 </resources>

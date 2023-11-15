@@ -59,17 +59,14 @@
             android:textSize="15sp"
             android:layout_marginTop="10dp"/>
 
-        <TextView
-            android:id="@+id/tvPaymentExplanation"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="Keline dose not support virtual payments. You can pay when you receive your order."
-            android:fontFamily="@font/sf_pro_display"
-            app:layout_constraintTop_toBottomOf="@id/tvPaymentMethods"
+        <ImageView
+            android:id="@+id/imageAddPaymentMethod"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:src="@drawable/paypal"
             app:layout_constraintStart_toStartOf="@id/guideline1"
             app:layout_constraintEnd_toEndOf="@id/guideline2"
-            android:textColor="@color/black"
-            android:textSize="15sp" />
+            app:layout_constraintTop_toBottomOf="@+id/tvPaymentMethods" />
 
         <View
             android:id="@+id/topLine"
@@ -77,7 +74,7 @@
             android:layout_height="1dp"
             android:layout_marginTop="15dp"
             android:background="@drawable/white_background"
-            app:layout_constraintTop_toBottomOf="@id/tvPaymentExplanation"
+            app:layout_constraintTop_toBottomOf="@id/imageAddPaymentMethod"
             app:layout_constraintStart_toStartOf="@id/guideline1"
             app:layout_constraintEnd_toEndOf="@id/guideline2"
             android:backgroundTint="@color/g_blue_gray200"

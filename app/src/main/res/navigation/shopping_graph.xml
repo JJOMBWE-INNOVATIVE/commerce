@@ -41,6 +41,9 @@
         <action
             android:id="@+id/action_searchFragment_to_productDetailsFragment"
             app:destination="@id/ProductDetailsFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/ProductDetailsFragment"
@@ -121,4 +124,21 @@
             android:id="@+id/action_profileFragment3_to_userAccountFragment"
             app:destination="@id/userAccountFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/productAdderFragment2"
+        android:name="com.example.commerce.fragments.productAdder.ProductAdderFragment"
+        android:label="ProductAdderFragment"
+        tools:layout="@layout/fragment_product_adder">
+        <action
+            android:id="@+id/action_productAdderFragment2_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_productAdderFragment2_to_loginFragment2"
+            app:destination="@id/loginFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment2"
+        android:name="com.example.commerce.fragments.loginRegister.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login"/>
 </navigation>

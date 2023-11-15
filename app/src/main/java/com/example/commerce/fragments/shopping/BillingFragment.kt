@@ -1,5 +1,6 @@
 package com.example.commerce.fragments.shopping
 import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,7 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.commerce.R
+import com.example.commerce.activities.PayPalServiceActivity
 import com.example.commerce.adapters.AddressAdapter
 import com.example.commerce.adapters.BillingProductsAdapter
 import com.example.commerce.data.Address
@@ -161,6 +163,11 @@ class BillingFragment : Fragment() {
                 return@setOnClickListener
             }
             showOrderConfirmationDialog()
+        }
+
+        binding.imageAddPaymentMethod.setOnClickListener {
+            var intent = Intent(requireContext(), PayPalServiceActivity::class.java)
+            startActivity(intent)
         }
 
     }

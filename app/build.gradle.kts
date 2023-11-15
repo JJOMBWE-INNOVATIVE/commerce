@@ -8,6 +8,7 @@ plugins {
     id("dagger.hilt.android.plugin") // Use the appropriate version
     id("com.google.gms.google-services")
     id("org.jetbrains.kotlin.kapt")
+    id("com.google.firebase.crashlytics")
 }
 
 
@@ -55,13 +56,15 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.10.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("com.google.firebase:firebase-firestore-ktx:24.9.0")
-    implementation("com.google.firebase:firebase-firestore:24.9.0")
+    implementation("com.google.firebase:firebase-firestore-ktx:24.9.1")
+    implementation("com.google.firebase:firebase-firestore:24.9.1")
     implementation("com.google.android.gms:play-services-analytics-impl:18.0.4")
     implementation ("com.google.firebase:firebase-auth:22.2.0")
     implementation("com.google.firebase:firebase-storage-ktx:20.3.0")
     implementation("com.google.firebase:firebase-database:20.3.0")
     implementation("androidx.compose.ui:ui-android:1.5.4")
+    implementation("com.google.firebase:firebase-crashlytics:18.5.1")
+    implementation("com.google.firebase:firebase-analytics:21.5.0")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
@@ -89,11 +92,8 @@ dependencies {
     implementation("com.shuhart.stepview:stepview:1.5.1")
 
     // Android Ktx
-    implementation("androidx.navigation:navigation-fragment-ktx:2.7.4")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.5")
 
-    // Dagger Hilt
-//    implementation("com.google.dagger:hilt-android:2.48")
-//    ksp("com.google.dagger:hilt-android-compiler:2.48")
     // Dagger Hilt
     implementation("com.google.dagger:hilt-android:2.48")
     kapt("com.google.dagger:hilt-android-compiler:2.48")
@@ -117,6 +117,10 @@ dependencies {
 
     // Firebase
     implementation("com.google.firebase:firebase-auth-ktx:22.2.0")
+
+    //pay pal
+    implementation("com.paypal.checkout:android-sdk:0.112.2")
+    //implementation ("com.paypal.sdk:paypal-android-sdk:2.16.0")
 }
 
 kapt {

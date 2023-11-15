@@ -10,16 +10,43 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <ImageView
+            android:id="@+id/closeAdmin"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_close"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/userView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="236dp"
+            android:layout_marginTop="20dp"
+            android:text="view user"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/closeAdmin"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <ProgressBar
             android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:visibility="invisible"/>
-
+            app:layout_constraintEnd_toEndOf="@+id/productsInfo"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="@+id/productsInfo"
+            app:layout_constraintVertical_bias="0.612" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/productsInfo"
@@ -27,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="90dp"
             android:orientation="vertical"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -36,9 +63,10 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/product_general_information"
+                android:text="PRODUCTS INFORMATION"
                 android:textSize="20sp"
                 android:textStyle="bold"
+                android:gravity="center"
                 android:textColor="@color/black" />
 
             <EditText
@@ -130,6 +158,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:backgroundTint="@color/g_blue"
                     android:text="@string/product_colors"
                     android:textSize="14sp" />
 
@@ -138,6 +167,7 @@
                     android:layout_width="228dp"
                     android:layout_height="match_parent"
                     android:layout_marginStart="20dp"
+                    android:backgroundTint="@color/g_blue"
                     android:gravity="center"
                     android:textSize="14sp" />
             </LinearLayout>
@@ -152,6 +182,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:backgroundTint="@color/g_blue"
                     android:text="@string/product_images"
                     android:textSize="14sp" />
 
@@ -173,6 +204,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Save"
+            android:backgroundTint="@color/g_blue"
             app:layout_constraintBottom_toTopOf="@+id/progressBar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"

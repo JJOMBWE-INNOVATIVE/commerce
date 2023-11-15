@@ -26,7 +26,7 @@
             android:layout_marginTop="32dp"
             android:drawableStart="@drawable/ic_kleine_shape"
             android:drawablePadding="6dp"
-            android:text="Kleine."
+            android:text="INTEGRIN."
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/guidelineLoginRight"
             app:layout_constraintStart_toStartOf="@id/guidelineLoginLeft"
@@ -66,6 +66,8 @@
             android:layout_height="@dimen/edittextHeight"
             android:layout_marginTop="15dp"
             android:hint="@string/LastName"
+            android:gravity="left|center_vertical"
+            android:padding="10dp"
             android:inputType="textEmailAddress"
             app:layout_constraintEnd_toStartOf="@+id/guidelineLoginRight"
             app:layout_constraintHorizontal_bias="0.0"
@@ -79,6 +81,8 @@
             android:layout_height="@dimen/edittextHeight"
             android:layout_marginTop="15dp"
             android:hint="@string/FirstName"
+            android:gravity="left|center_vertical"
+            android:padding="10dp"
             android:inputType="textEmailAddress"
             app:layout_constraintEnd_toStartOf="@+id/guidelineLoginRight"
             app:layout_constraintHorizontal_bias="0.0"
@@ -92,6 +96,8 @@
             android:layout_height="@dimen/edittextHeight"
             android:layout_marginTop="15dp"
             android:hint="Email"
+            android:gravity="left|center_vertical"
+            android:padding="10dp"
             android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="@id/guidelineLoginRight"
             app:layout_constraintHorizontal_bias="1.0"
@@ -107,6 +113,8 @@
             app:layout_constraintTop_toBottomOf="@id/edEmailRegister"
             style="@style/editText"
             android:hint="Password"
+            android:gravity="left|center_vertical"
+            android:padding="10dp"
             android:inputType="textPassword"
             android:layout_marginTop="15dp"/>
 
@@ -117,46 +125,46 @@
             style="@style/h2"
             app:layout_constraintStart_toStartOf="@id/guidelineLoginLeft"
             app:layout_constraintTop_toBottomOf="@id/edPasswordRegister"
-            android:textAlignment="center"
-            android:gravity="center"
+            android:gravity="left"
+            android:textSize="12sp"
             android:text="Forgot password"
             android:textColor="@color/black"/>
 
-        <ImageView
-            android:id="@+id/facebookLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="13dp"
-            app:layout_constraintStart_toStartOf="@id/guidelineLoginLeft"
-            app:layout_constraintTop_toBottomOf="@id/buttonRegisterRegister"
-            android:src="@drawable/facebook_login"/>
+<!--        <ImageView-->
+<!--            android:id="@+id/facebookLogin"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="13dp"-->
+<!--            app:layout_constraintStart_toStartOf="@id/guidelineLoginLeft"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/buttonRegisterRegister"-->
+<!--            android:src="@drawable/facebook_login"/>-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Facebook"
-            app:layout_constraintStart_toStartOf="@id/facebookLogin"
-            app:layout_constraintTop_toTopOf="@id/facebookLogin"
-            app:layout_constraintBottom_toBottomOf="@id/facebookLogin"
-            app:layout_constraintEnd_toEndOf="@id/facebookLogin"/>
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Facebook"-->
+<!--            app:layout_constraintStart_toStartOf="@id/facebookLogin"-->
+<!--            app:layout_constraintTop_toTopOf="@id/facebookLogin"-->
+<!--            app:layout_constraintBottom_toBottomOf="@id/facebookLogin"-->
+<!--            app:layout_constraintEnd_toEndOf="@id/facebookLogin"/>-->
 
-        <ImageView
-            android:id="@+id/googleLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="13dp"
-            app:layout_constraintEnd_toEndOf="@id/guidelineLoginRight"
-            app:layout_constraintTop_toBottomOf="@id/buttonRegisterRegister"
-            android:src="@drawable/google_login"/>
+<!--        <ImageView-->
+<!--            android:id="@+id/googleLogin"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="13dp"-->
+<!--            app:layout_constraintEnd_toEndOf="@id/guidelineLoginRight"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/buttonRegisterRegister"-->
+<!--            android:src="@drawable/google_login"/>-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Google"
-            app:layout_constraintStart_toStartOf="@id/googleLogin"
-            app:layout_constraintTop_toTopOf="@id/googleLogin"
-            app:layout_constraintBottom_toBottomOf="@id/googleLogin"
-            app:layout_constraintEnd_toEndOf="@id/googleLogin"/>
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Google"-->
+<!--            app:layout_constraintStart_toStartOf="@id/googleLogin"-->
+<!--            app:layout_constraintTop_toTopOf="@id/googleLogin"-->
+<!--            app:layout_constraintBottom_toBottomOf="@id/googleLogin"-->
+<!--            app:layout_constraintEnd_toEndOf="@id/googleLogin"/>-->
 
         <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
             android:id="@+id/buttonRegisterRegister"

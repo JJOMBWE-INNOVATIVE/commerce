@@ -2,36 +2,49 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
-        android:name=".CommerceApplication"
+        android:name=".data.CommerceApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/commerce"
+        android:icon="@drawable/splash"
+        android:usesCleartextTraffic="true"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/commerce"
+        android:roundIcon="@drawable/splash"
         android:supportsRtl="true"
         android:theme="@style/Theme.Commerce"
         tools:targetApi="31">
         <activity
+            android:name=".activities.PayPalServiceActivity"
+            android:exported="true" >
+
+        </activity>
+
+        <activity
             android:name=".activities.SplashActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
 
+        </activity>
         <activity
             android:name=".activities.LoginRegisterActivity"
             android:exported="true">
-        </activity>
 
+        </activity>
         <activity
             android:name=".activities.ShoppingActivity"
             android:exported="false" />
 
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

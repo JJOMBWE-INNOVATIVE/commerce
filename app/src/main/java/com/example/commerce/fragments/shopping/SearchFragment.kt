@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.commerce.R
 import com.example.commerce.databinding.FragmentSearchBinding
@@ -46,6 +47,9 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
         super.onViewCreated(view, savedInstanceState)
 
 
+        binding.arrowBack.setOnClickListener {
+           findNavController().navigate(R.id.action_searchFragment_to_homeFragment)
+        }
 
         prepareRecyclerView()
         binding.searchImg.setOnClickListener {
@@ -58,12 +62,23 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
         binding.editTextSearch.addTextChangedListener { searchQuery ->
             searchJob?.cancel()
             searchJob = lifecycleScope.launch{
-                delay(500)
+                delay(100)
                 viewModel.searchProducts(searchQuery.toString())
             }
         }
 
+        onSearchedClick()
+
+
 }
+
+    private fun onSearchedClick() {
+        myAdapter.onClick = { product ->
+            val action = SearchFragmentDirections.actionSearchFragmentToProductDetailsFragment(product)
+            findNavController().navigate(action)
+        }
+    }
+
 
     private fun observeLiveData() {
         viewModel.filteredProducts.observe(viewLifecycleOwner, Observer {

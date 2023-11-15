@@ -22,7 +22,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:background="@color/g_blue"/>
+            android:background="@color/white"/>
 
         <TextView
             android:id="@+id/name"

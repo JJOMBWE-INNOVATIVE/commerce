@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.commerce.data.Products
+import com.example.commerce.data.order.products
 import com.example.commerce.databinding.TextViewProductNameBinding
 
 class SearchResultsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -15,6 +16,10 @@ class SearchResultsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             binding.apply {
                 Glide.with(itemView).load(product.images[0]).into(img)
                 name.text = product.name
+            }
+
+            itemView.setOnClickListener {
+                onClick?.invoke(product)
             }
         }
     }
@@ -38,11 +43,13 @@ class SearchResultsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         (holder as ProductViewHolder).binds(differ.currentList[position])
+
     }
 
     override fun getItemCount(): Int {
         return differ.currentList.size
     }
 
+    var onClick: ((Products) -> Unit)? = null
 
 }
