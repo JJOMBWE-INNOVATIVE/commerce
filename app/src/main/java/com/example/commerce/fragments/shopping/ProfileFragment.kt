@@ -72,31 +72,33 @@ class ProfileFragment : Fragment() {
 
         binding.tvVersion.text = "Version ${BuildConfig.VERSION_CODE}"
 
-//        viewModel.user
-//            .onEach { resource ->
-//                when (resource) {
-//                    is Resource.Loading -> {
-//                        binding.progressbarSettings.visibility = View.VISIBLE
-//                    }
-//
-//                    is Resource.Success -> {
-//                        binding.progressbarSettings.visibility = View.GONE
-//                        Glide.with(requireView()).load(resource.data!!.imagePath)
-//                            .error(ColorDrawable(Color.BLACK)).into(binding.imageUser)
-//                        binding.tvUserName.text =
-//                            "${resource.data.firstName} ${resource.data.lastName}"
-//                    }
-//
-//                    is Resource.Error -> {
-//                        Toast.makeText(requireContext(), resource.message, Toast.LENGTH_SHORT)
-//                            .show()
-//                        binding.progressbarSettings.visibility = View.GONE
-//                    }
-//
-//                    else -> Unit
-//                }
-//            }
-//            .launchIn(lifecycleScope)
+        viewModel.user
+            .onEach { resource ->
+                when (resource) {
+                    is Resource.Loading -> {
+                        binding.progressbarSettings.visibility = View.VISIBLE
+                    }
+
+                    is Resource.Success -> {
+                        binding.progressbarSettings.visibility = View.GONE
+                        Glide.with(requireView())
+                            .load(resource.data!!.imagePath)
+                            .error(ColorDrawable(Color.BLACK))
+                            .into(binding.imageUser)
+                        binding.tvUserName.text =
+                            "${resource.data.firstName} ${resource.data.lastName}"
+                    }
+
+                    is Resource.Error -> {
+                        Toast.makeText(requireContext(), resource.message, Toast.LENGTH_SHORT)
+                            .show()
+                        binding.progressbarSettings.visibility = View.GONE
+                    }
+
+                    else -> Unit
+                }
+            }
+            .launchIn(lifecycleScope)
     }
 
         override fun onResume() {

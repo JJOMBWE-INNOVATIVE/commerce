@@ -3,10 +3,9 @@ import android.app.Application
 import android.graphics.Bitmap
 import android.net.Uri
 import android.provider.MediaStore
-import androidx.compose.ui.semantics.Role
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.commerce.CommerceApplication
+import com.example.commerce.data.CommerceApplication
 import com.example.commerce.data.User
 import com.example.commerce.util.RegisterValidation
 import com.example.commerce.util.Resource

@@ -75,9 +75,9 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
                         edEmailRegister.text.toString().trim()
                     )
                     val password = edPasswordRegister.text.toString()
+                    RegisterProgressBar.visibility = View.VISIBLE
                     viewModel.createAccountWithEmailAndPassword(user, password)
 
-                    // Navigate to the login fragment after a successful registration
                     findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
                 }
             }
@@ -93,15 +93,18 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
             viewModel.register.collect {
                 when (it) {
                     is Resource.Loading -> {
+                        binding.RegisterProgressBar.visibility = View.VISIBLE
                         binding.buttonRegisterRegister.startAnimation()
                     }
                     is Resource.Success -> {
+                        binding.RegisterProgressBar.visibility = View.GONE
                         binding.buttonRegisterRegister.revertAnimation()
                         clearFields()
                     }
                     is Resource.Error -> {
                         Log.e(TAG,it.message.toString())
                         binding.buttonRegisterRegister.revertAnimation()
+                        binding.RegisterProgressBar.visibility = View.GONE
                     }
                     else -> Unit
                 }

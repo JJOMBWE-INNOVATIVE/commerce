@@ -59,10 +59,12 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 when (result) {
                     is Resource.Success<FirebaseUser> -> {
                         if (result.data != null) {
+                            binding.LoginProgressBar.visibility = View.VISIBLE
                             val userId = result.data.uid
                             if (viewModel.checkIsAdmin( userId = userId, email = "jjombwenathan7@gmail.com", password = "123456789" )) {
                                 findNavController().navigate(R.id.action_loginFragment_to_productAdderFragment)
                             } else {
+
                                 findNavController().navigate(R.id.action_loginFragment_to_shoppingActivity)
                             }
                         }
@@ -89,6 +91,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             viewModel.resetPassword.collect{
                 when (it) {
                     is Resource.Loading -> {
+
                     }
                     is Resource.Success -> {
                         Snackbar.make(requireView(),"Reset link was sent to your email", Snackbar.LENGTH_LONG).show()
@@ -106,9 +109,11 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             viewModel.login.collect {
                 when (it) {
                     is Resource.Loading -> {
+                        binding.LoginProgressBar.visibility = View.VISIBLE
                         binding.buttonLoginLogin.startAnimation()
                     }
                     is Resource.Success -> {
+                        binding.LoginProgressBar.visibility = View.GONE
                         binding.buttonLoginLogin.revertAnimation()
                         Intent(requireActivity(), ShoppingActivity::class.java).also { intent ->
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)

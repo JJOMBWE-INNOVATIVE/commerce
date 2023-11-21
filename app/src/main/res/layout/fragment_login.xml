@@ -145,6 +145,17 @@
             app:layout_constraintTop_toBottomOf="@+id/tvForgotPasswordLogin"
             app:spinning_bar_color="@color/white" />
 
+        <ProgressBar
+            android:id="@+id/LoginProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineLoginRight"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLoginLeft"
+            app:layout_constraintTop_toBottomOf="@+id/buttonLoginLogin" />
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineLoginLeft"
             android:layout_width="wrap_content"
